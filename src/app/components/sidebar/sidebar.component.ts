@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faEnvelope, faLaptopCode, faGraduationCap, faAddressCard, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faGitlab, faInstagram, faBitbucket } from '@fortawesome/free-brands-svg-icons';
 import { SidebarItem } from '../../models/SidebarItem';
 @Component({
   selector: 'app-sidebar',
@@ -12,7 +13,7 @@ export class SidebarComponent implements OnInit {
       id: 0,
       title: 'About',
       icon: faAddressCard,
-      direction: '/about',
+      direction: '/',
     },
     {
       id: 1,
@@ -24,7 +25,7 @@ export class SidebarComponent implements OnInit {
       id: 2,
       title: 'Education & Experience',
       icon: faGraduationCap,
-      direction: '/EducationExperience',
+      direction: '/educationAndExperience',
     },
     {
       id: 3,
@@ -34,10 +35,38 @@ export class SidebarComponent implements OnInit {
     }
   ];
 
-  icons = {
+  iconsNav = {
     menu: faBars,
     closeMenu: faTimes 
-  }
+  };
+
+  iconsSocialNetwork:SidebarItem[] = [
+    {
+      id: 0,
+      title: 'GitHub',
+      icon: faGithub,
+      direction: 'https://github.com/alexandergf',
+    },
+    {
+      id: 1,
+      title: 'BitBucket',
+      icon: faBitbucket,
+      direction: 'https://bitbucket.org/alexgferreiro96/',
+    },
+    {
+      id: 2,
+      title: 'GitLab',
+      icon: faGitlab,
+      direction: 'https://gitlab.com/alexandergf ',
+    },
+    {
+      id: 3,
+      title: 'Instagram',
+      icon: faInstagram,
+      direction: 'https://www.instagram.com/alexandergf1996/'
+    }
+  ];
+
   collapseShow = "hidden";
 
   constructor() { }
