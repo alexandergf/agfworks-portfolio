@@ -1,17 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, Input, OnInit } from '@angular/core';
 import { faEnvelope, faLaptopCode, faGraduationCap, faAddressCard, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faGitlab, faInstagram, faBitbucket } from '@fortawesome/free-brands-svg-icons';
 import { SidebarItem } from '../../models/SidebarItem';
+import { TopbarComponent } from '../topbar/topbar.component';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
+
+  @HostBinding('class.is-open')
+  @Input() isOpen:boolean = false;
+
   menu:SidebarItem[] = [
     {
       id: 0,
-      title: 'About',
+      title: 'About Me',
       icon: faAddressCard,
       direction: '/',
     },
@@ -69,13 +74,13 @@ export class SidebarComponent implements OnInit {
 
   collapseShow = "hidden";
 
-  constructor() { }
+  constructor(private topBar:TopbarComponent) { }
 
   ngOnInit(): void {
   }
 
-  toggleCollapseShow(classes:string) {
-    this.collapseShow = classes;
+  toggleCollapseShow(){
+    this.topBar.toggleCollapseShow();
   }
 
 }

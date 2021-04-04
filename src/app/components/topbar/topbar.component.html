@@ -1,0 +1,35 @@
+<nav
+  class="md:left-0 md:block md:fixed md:top-0 md:overflow-y-auto md:w-full md:flex-row md:flex-nowrap md:overflow-hidden bg-white flex flex-wrap items-center justify-between relative z-20 py-6 md:py-4 "
+>
+  <div
+    class="md:flex-col md:items-stretch md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto"
+  >
+    <!-- Collapse -->
+    <div
+      class="md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:shadow-none absolute left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1"
+    >
+      <!-- Collapse header -->
+      <div
+        class="md:min-w-full block"
+      >
+        <div class="flex flex-row items-center">
+            <button
+                class="cursor-pointer text-black opacity-50 text-xl leading-none bg-transparent border-none w-12"
+                type="button"
+                (click)="toggleCollapseShow()"
+            >
+                    <fa-icon *ngIf="iconMenuFlag" [icon]="iconsNav.menu"></fa-icon>
+                    <fa-icon *ngIf="!iconMenuFlag" [icon]="iconsNav.closeMenu" class="text-red-600 font-bold"></fa-icon>
+            </button>
+            <a
+              class="md:block text-left text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold"
+              [routerLink]="'/'"
+            >
+              Alexander Gonzalez
+            </a>          
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<app-sidebar [isOpen]="sideBarIsOpened"></app-sidebar>
