@@ -18,7 +18,7 @@ export class SidebarComponent implements OnInit {
       id: 0,
       title: 'About Me',
       icon: faAddressCard,
-      direction: '/',
+      direction: '/about',
     },
     {
       id: 1,

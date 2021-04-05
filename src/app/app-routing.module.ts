@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutComponent } from './components/views/about/about.component';
-import { ContactComponent } from './components/views/contact/contact.component';
-import { EducationExperienceComponent } from './components/views/education-experience/education-experience.component';
-import { ProjectsComponent } from './components/views/projects/projects.component';
 
 
 const routes: Routes = [
-  {path: '', component: AboutComponent},
-  {path: 'projects', component: ProjectsComponent},
-  {path: 'educationAndExperience', component: EducationExperienceComponent},
-  {path: 'contact', component: ContactComponent}
+  {path: '', loadChildren: () => import('./components/views/home/home.module').then(m => m.HomeModule)},
+  {path: 'about', loadChildren: () => import('./components/views/about/about.module').then(m => m.AboutModule)},
+  {path: 'educationAndExperience', loadChildren: () => import('./components/views/education-experience/education-experience.module').then(m => m.EducationExperienceModule)},
+  {path: 'contact', loadChildren: () => import('./components/views/contact/contact.module').then(m => m.ContactModule)},
+  {path: 'projects', loadChildren: () => import('./components/views/projects/projects.module').then(m => m.ProjectsModule)},
+  {
+    path: '',
+    redirectTo: '',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({

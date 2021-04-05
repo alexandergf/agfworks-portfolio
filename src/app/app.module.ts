@@ -5,27 +5,17 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { AboutComponent } from './components/views/about/about.component';
-import { ProjectsComponent } from './components/views/projects/projects.component';
-import { EducationExperienceComponent } from './components/views/education-experience/education-experience.component';
-import { ContactComponent } from './components/views/contact/contact.component';
-import { TopbarComponent } from './components/topbar/topbar.component';
+import { TopBarModule } from './components/topbar/topbar.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SidebarComponent,
-    AboutComponent,
-    ProjectsComponent,
-    EducationExperienceComponent,
-    ContactComponent,
-    TopbarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    TopBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
