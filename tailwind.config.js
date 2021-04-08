@@ -10,7 +10,9 @@ module.exports = {
       extend: {},
     },
     variants: {
-      extend: {},
+      extend: {
+        textOpacity: ['dark']
+      },
     },
     plugins: [require('@tailwindcss/forms'),require('@tailwindcss/typography')],
 };

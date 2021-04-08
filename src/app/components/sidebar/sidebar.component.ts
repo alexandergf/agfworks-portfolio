@@ -16,25 +16,25 @@ export class SidebarComponent implements OnInit {
   menu:SidebarItem[] = [
     {
       id: 0,
-      title: 'About Me',
+      title: 'Sidebar.about-me',
       icon: faAddressCard,
       direction: '/about',
     },
     {
       id: 1,
-      title: 'Projects',
+      title: 'Sidebar.projects',
       icon: faLaptopCode,
       direction: '/projects',
     },
     {
       id: 2,
-      title: 'Education & Experience',
+      title: 'Sidebar.education-experience',
       icon: faGraduationCap,
       direction: '/educationAndExperience',
     },
     {
       id: 3,
-      title: 'Contact',
+      title: 'Sidebar.contact',
       icon: faEnvelope,
       direction: '/contact',
     }

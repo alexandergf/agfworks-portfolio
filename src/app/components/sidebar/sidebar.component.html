@@ -15,10 +15,10 @@
       <ul class="md:flex-col md:min-w-full flex flex-col list-none">
         <li class="items-center" *ngFor="let item of menu" (click)="toggleCollapseShow()">
           <a
-            class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
+            class="text-blueGray-700 hover:text-blueGray-500 text-xs py-3 font-bold block"
             [routerLink]="item.direction"
             ><fa-icon [icon]="item.icon" class="pr-3"></fa-icon>
-            {{item.title}}</a
+            {{item.title | translate}}</a
           >
         </li>
         

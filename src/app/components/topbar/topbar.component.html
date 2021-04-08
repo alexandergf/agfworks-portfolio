@@ -1,5 +1,5 @@
 <nav
-  class="md:left-0 md:block md:fixed md:top-0 md:overflow-y-auto md:w-full md:flex-row md:flex-nowrap md:overflow-hidden bg-white flex flex-wrap items-center justify-between relative z-20 py-6 md:py-4 "
+  class="md:fixed md:left-0 md:block md:top-0 md:overflow-y-auto md:w-full md:flex-row md:flex-nowrap md:overflow-hidden bg-white dark:bg-gray-700 flex flex-wrap items-center justify-between z-20 py-6 md:py-4 "
 >
   <div
     class="md:flex-col md:items-stretch md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto"
@@ -12,21 +12,35 @@
       <div
         class="md:min-w-full block"
       >
-        <div class="flex flex-row items-center">
-            <button
-                class="cursor-pointer text-black opacity-50 text-xl leading-none bg-transparent border-none w-12"
-                type="button"
-                (click)="toggleCollapseShow()"
-            >
-                    <fa-icon *ngIf="iconMenuFlag" [icon]="iconsNav.menu"></fa-icon>
-                    <fa-icon *ngIf="!iconMenuFlag" [icon]="iconsNav.closeMenu" class="text-red-600 font-bold"></fa-icon>
-            </button>
-            <a
-              class="md:block text-left text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold"
-              [routerLink]="'/'"
-            >
-              Alexander Gonzalez
-            </a>          
+        <div class="flex flex-row justify-between">
+          <div class="flex flex-row items-center md:w-1/4">
+              <button
+                  class="cursor-pointer text-black dark:text-white opacity-50 text-xl leading-none bg-transparent border-none w-12"
+                  type="button"
+                  (click)="toggleCollapseShow()"
+              >
+                      <fa-icon *ngIf="iconMenuFlag" [icon]="iconsNav.menu"></fa-icon>
+                      <fa-icon *ngIf="!iconMenuFlag" [icon]="iconsNav.closeMenu" class="text-red-600 font-bold"></fa-icon>
+              </button>
+              <a
+                class="md:block text-left text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold dark:text-white"
+                [routerLink]="'/'"
+              >
+                Alexander Gonzalez
+              </a>          
+          </div>
+          <div class="flex flex-row items-center md:w-1/4">
+            <div class="contenedor-botones flex flex-row justify-end w-full">
+              <button 
+                class="mx-8 text-gray-500 transition duration-150 ease-in-out bg-gray-400 border border-transparent rounded-md dark:border-white border-gray-700 lg:bg-white lg:dark:bg-gray-900 dark:text-gray-200 dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-700 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700 active:bg-gray-50 w-8"
+                (click)="changeThemeTop()"
+                >
+                <fa-icon [icon]="isDark ? changeThemeIcon.light : changeThemeIcon.dark"></fa-icon>
+              </button>
+              <button [ngClass]="{'active': activeLang == 'es'}" class="languages mx-2" (click)="cambiarLenguaje('es')"><img [src]="flags.spain" /></button>
+              <button [ngClass]="{'active': activeLang == 'en'}" class="languages mx-2" (click)="cambiarLenguaje('en')"><img [src]="flags.usa" /></button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
